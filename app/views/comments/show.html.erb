@@ -1,0 +1,9 @@
+
+<p>
+ <% byebug %>
+  name: <% @article.comments.each do |comment| %>
+      <p><%= comment.name %>
+  <% end %> 
+
+  <%= @comment.name %>
+</p>
