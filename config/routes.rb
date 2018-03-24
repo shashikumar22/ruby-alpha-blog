@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
- root	'pages#home'
- get '/about', to: 'pages#about' 
- resources :articles do
- 	resources :comments
- end
- resources :users
- # get '/signup', to: 'users#signup'
+ 	root	'pages#home'
+ 	get '/about', to: 'pages#about' 
+ 	resources :articles do
+ 		resources :comments
+ 	end
+ 	resources :users
+  get 'signup', to: 'users#new'
+  resources :users, except: [:new]
 end
